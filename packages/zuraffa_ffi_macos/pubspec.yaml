@@ -25,8 +25,8 @@ dependency_overrides:
   zuraffa_ffi_platform:
     path: ../zuraffa_ffi_platform
 
-repository: https://github.com/arrrrrny/zuraffa_ffi
-issue_tracker: https://github.com/arrrrrny/zuraffa_ffi/issues
+repository: https://github.com/arrrrny/zuraffa_ffi
+issue_tracker: https://github.com/arrrrny/zuraffa_ffi/issues
 
 topics:
   - ffi

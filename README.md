@@ -21,4 +21,4 @@ siblings depend on each other via hosted dependencies — see
 
 See [`specs/`](specs/) for the spec-driven development records.
 
-Repository: https://github.com/arrrrrny/zuraffa_ffi
+Repository: https://github.com/arrrrny/zuraffa_ffi

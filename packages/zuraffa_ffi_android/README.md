@@ -1,6 +1,6 @@
 # zuraffa_ffi_android
 
-Android adapter for the [zuraffa_ffi](https://github.com/arrrrrny/zuraffa_ffi) federated monorepo:
+Android adapter for the [zuraffa_ffi](https://github.com/arrrrny/zuraffa_ffi) federated monorepo:
 the Ffi port over an injected platform channel, with the shared
 envelope machinery from `zuraffa_ffi_platform` and a typed failure taxonomy
 as pure data.
