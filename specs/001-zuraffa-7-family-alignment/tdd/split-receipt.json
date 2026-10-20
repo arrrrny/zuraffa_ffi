@@ -1,0 +1,32 @@
+{
+  "feature": "001-zuraffa-7-family-alignment",
+  "split_at": "2026-10-20T22:28:21.633758Z",
+  "source": "tdd/test-list.md",
+  "rows": 4,
+  "spec_hash": "032791c920ef876d6d94a46a32c62d4866386dec7347f593712dae800b0d9b1a",
+  "spec_mtime": "2026-10-20T19:06:16.223477Z",
+  "classification": {
+    "A1": "CORE",
+    "A2": "CORE",
+    "A3": "CORE",
+    "A4": "CORE"
+  },
+  "classification_source": {
+    "A1": "heuristic",
+    "A2": "heuristic",
+    "A3": "heuristic",
+    "A4": "heuristic"
+  },
+  "adaptive_slots": [],
+  "golden_ids": [],
+  "files": [
+    "tdd/04-ENGINE.md",
+    "tdd/04-SKIN.md",
+    "tdd/04-CONTRACT.md",
+    "tdd/test-list.md (meta-index)"
+  ],
+  "engine_flutter_references": 0,
+  "refreshed_at": "2026-10-20T22:32:59.710346Z",
+  "refreshed_by": "zfa tdd plan",
+  "refreshed_rows": 4
+}
