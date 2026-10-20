@@ -32,5 +32,41 @@ void main() {
       // constraint admits zuraffa 7.2.0.
       expect(subject.subject_a1(), isEmpty);
     });
+
+    test('A1 — a family that drifts to two different `zuraffa` constraints is reported', () {
+      final violations = subject.subject_a1(constraints: {
+        'zuraffa_ffi': '^7.2.0',
+        'zuraffa_ffi_platform': '^6.2.2',
+        'zuraffa_ffi_android': '^7.2.0',
+        'zuraffa_ffi_ios': '^7.2.0',
+        'zuraffa_ffi_macos': '^7.2.0',
+      });
+      expect(violations, hasLength(1));
+      expect(violations.single, contains('different `zuraffa` constraints'));
+    });
+
+    test('A1 — a family constraint that does not admit zuraffa 7.2.0 is reported', () {
+      final violations = subject.subject_a1(constraints: {
+        'zuraffa_ffi': '^6.2.2',
+        'zuraffa_ffi_platform': '^6.2.2',
+        'zuraffa_ffi_android': '^6.2.2',
+        'zuraffa_ffi_ios': '^6.2.2',
+        'zuraffa_ffi_macos': '^6.2.2',
+      });
+      expect(violations, hasLength(1));
+      expect(violations.single, contains('does not admit zuraffa 7.2.0'));
+    });
+
+    test('A1 — a member that declares no `zuraffa` dependency at all is reported', () {
+      final violations = subject.subject_a1(constraints: {
+        'zuraffa_ffi': '^7.2.0',
+        'zuraffa_ffi_platform': '^7.2.0',
+        'zuraffa_ffi_android': '^7.2.0',
+        'zuraffa_ffi_ios': '^7.2.0',
+      });
+      expect(violations, hasLength(1));
+      expect(violations.single, contains('zuraffa_ffi_macos'));
+      expect(violations.single, contains('no `zuraffa` dependency'));
+    });
   });
 }

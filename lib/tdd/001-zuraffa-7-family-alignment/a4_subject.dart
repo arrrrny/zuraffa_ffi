@@ -7,6 +7,10 @@
 // The scenario scans the family's sources: the envelope must be declared
 // exactly once — in `zuraffa_ffi_platform` — and every adapter must use it.
 //
+// The [root] seam lets a test drive the scenario against a deliberately
+// broken family tree, so the failure paths are covered too and not only the
+// happy path.
+//
 // ignore_for_file: non_constant_identifier_names
 library;
 
@@ -25,9 +29,11 @@ const List<String> adapterPackages = <String>[
 /// Scenario runner for behavior A4.
 ///
 /// Returns the violations found; an empty list means the scenario holds.
-List<String> subject_a4() {
+///
+/// When [root] is given it replaces the repository root the scenario reads.
+List<String> subject_a4({Directory? root}) {
   final violations = <String>[];
-  final root = repositoryRoot();
+  final familyRoot = root ?? repositoryRoot();
 
   final envelopeDeclaration =
       RegExp(r'class\s+PlatformFfiEnvelope\b');
@@ -35,7 +41,7 @@ List<String> subject_a4() {
 
   final declaredIn = <String>[];
   for (final package in familyPackages) {
-    final lib = Directory('${root.path}/packages/$package/lib');
+    final lib = Directory('${familyRoot.path}/packages/$package/lib');
     if (!lib.existsSync()) continue;
     for (final file in lib.listSync(recursive: true).whereType<File>()) {
       if (!file.path.endsWith('.dart')) continue;
@@ -60,7 +66,7 @@ List<String> subject_a4() {
   }
 
   for (final package in adapterPackages) {
-    final lib = Directory('${root.path}/packages/$package/lib');
+    final lib = Directory('${familyRoot.path}/packages/$package/lib');
     if (!lib.existsSync()) continue;
     var uses = false;
     for (final file in lib.listSync(recursive: true).whereType<File>()) {

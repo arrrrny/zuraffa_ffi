@@ -8,6 +8,10 @@
 // a hand-kept copy of it, so the check fails the moment a family member
 // drifts to a different `zuraffa` constraint.
 //
+// The [constraints] seam lets a test drive the scenario with a deliberately
+// broken family, so the failure paths are covered too and not only the
+// happy path.
+//
 // ignore_for_file: non_constant_identifier_names
 library;
 
@@ -16,23 +20,35 @@ import 'family_manifest.dart';
 /// Scenario runner for behavior A1.
 ///
 /// Returns the violations found; an empty list means the scenario holds.
-List<String> subject_a1() {
+///
+/// When [constraints] is given it replaces the constraints read from the
+/// shipped pubspecs: a member missing from the map counts as a member that
+/// declares no `zuraffa` dependency at all.
+List<String> subject_a1({Map<String, String>? constraints}) {
   final violations = <String>[];
 
-  final constraints = <String, String>{};
+  final resolved = <String, String>{};
   for (final package in familyPackages) {
     try {
-      constraints[package] = declaredConstraint(package, 'zuraffa');
+      if (constraints == null) {
+        resolved[package] = declaredConstraint(package, 'zuraffa');
+      } else {
+        final declared = constraints[package];
+        if (declared == null) {
+          throw StateError('$package declares no `zuraffa` dependency.');
+        }
+        resolved[package] = declared;
+      }
     } on StateError catch (error) {
       violations.add(error.message);
     }
   }
 
-  final distinct = constraints.values.toSet();
+  final distinct = resolved.values.toSet();
   if (distinct.length > 1) {
     violations.add(
       'The family declares ${distinct.length} different `zuraffa` '
-      'constraints: ${constraints.entries.map((e) => '${e.key}=${e.value}').join(', ')}.',
+      'constraints: ${resolved.entries.map((e) => '${e.key}=${e.value}').join(', ')}.',
     );
     return violations;
   }

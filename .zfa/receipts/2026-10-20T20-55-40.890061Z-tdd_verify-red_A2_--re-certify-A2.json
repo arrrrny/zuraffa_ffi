@@ -1,0 +1,34 @@
+{
+  "schema": "proof.v1",
+  "command": "tdd verify-red A2 --re-certify",
+  "target": "A2",
+  "repro": "zfa tdd verify-red A2 --re-certify",
+  "at": "2026-10-20T20:55:40.890061Z",
+  "generator_version": "7.2.0",
+  "input": {
+    "sanctioned": true,
+    "hand_delta": true,
+    "transition": "re-certify",
+    "behavior": "A2",
+    "feature": "001-zuraffa-7-family-alignment"
+  },
+  "files": [
+    {
+      "path": "test/tdd/001-zuraffa-7-family-alignment/a2_test.dart",
+      "action": "update",
+      "sha256": "6f4eabb56990d7edc2e18233f8ddfea60324b353f12a80851f98a68089872f09",
+      "bytes": 3021,
+      "snapshot": "// GENERATED TEST — `zfa tdd gen A2` (spec 044-test-tdd-generation).\n//\n// behavior_id: A2\n// source_criterion: AC-2\n// kind: acceptance\n// description: all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.\n//\n// The red surface of the scenario: the paired subject at\n// `package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/a2_subject.dart`\n// reports the workspace violations it finds.\n//\n// zfa:tdd: A2:hand — hand step completed before first red certification (issue #1411)\nlibrary;\n\nimport 'dart:io';\n\nimport 'package:test/test.dart';\nimport 'package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/a2_subject.dart' as subject;\n\nvoid main() {\n  group('A2 (AC-2)', () {\n    test('A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.', () {\n      final Object? result = (() {\n        try {\n          subject.subject_a2();\n          return null;\n        } on UnimplementedError catch (error) {\n          return error;\n        }\n      })();\n      expect(result, isNot(isA<UnimplementedError>()));\n      // The observable outcome of the scenario: the family resolves through\n      // one workspace — no stray lockfile, no stray package configuration.\n      expect(subject.subject_a2(), isEmpty);\n    });\n\n    test('A2 — a workspace that is split, unlisted, or missing its lockfile is reported', () {\n      final root = Directory.systemTemp.createTempSync('zuraffa_ffi_workspace');\n      addTearDown(() => root.deleteSync(recursive: true));\n\n      // A root pubspec without a `workspace:` block that lists only some of\n      // the members, no shared lockfile, and one member that carries its own\n      // lockfile and package configuration.\n      File('${root.path}/pubspec.yaml').writeAsStringSync('''\nname: broken_workspace\npublish_to: none\n''');\n      final stray = Directory('${root.path}/packages/zuraffa_ffi_macos')\n        ..createSync(recursive: true);\n      File('${stray.path}/pubspec.lock').writeAsStringSync('# stray\\n');\n      Directory('${stray.path}/.dart_tool').createSync(recursive: true);\n      File('${stray.path}/.dart_tool/package_config.json')\n          .writeAsStringSync('{}');\n\n      final violations = subject.subject_a2(root: root);\n      expect(\n        violations,\n        contains('The repository root declares no `workspace:` block.'),\n      );\n      expect(\n        violations,\n        contains('The workspace does not list packages/zuraffa_ffi.'),\n      );\n      expect(violations, contains('The workspace has no shared lockfile.'));\n      expect(\n        violations,\n        contains(\n          'zuraffa_ffi_macos carries its own lockfile — the workspace must '\n          'share one.',\n        ),\n      );\n      expect(\n        violations,\n        contains(\n          'zuraffa_ffi_macos carries its own package configuration — the '\n          'workspace must share one.',\n        ),\n      );\n    });\n  });\n}\n"
+    },
+    {
+      "path": "lib/tdd/001-zuraffa-7-family-alignment/a2_subject.dart",
+      "action": "update",
+      "sha256": "4fd75d99c530bede79f74d93050f1e5338a23fb75a5718ae9e8e0d0ec294b8d9",
+      "bytes": 2175,
+      "snapshot": "// HAND-IMPLEMENTED SUBJECT — behavior A2 (zfa:tdd: A2:hand).\n//\n// behavior_id: A2\n// source_criterion: AC-2\n// description: all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.\n//\n// The scenario reads the repository's own workspace state — the root\n// pubspec's `workspace:` block, the shared lockfile, and the absence of a\n// per-member lockfile or package configuration.\n//\n// The [root] seam lets a test drive the scenario against a deliberately\n// broken workspace tree, so the failure paths are covered too and not only\n// the happy path.\n//\n// ignore_for_file: non_constant_identifier_names\nlibrary;\n\nimport 'dart:io';\n\nimport 'family_manifest.dart';\n\n/// Scenario runner for behavior A2.\n///\n/// Returns the violations found; an empty list means the scenario holds.\n///\n/// When [root] is given it replaces the repository root the scenario reads.\nList<String> subject_a2({Directory? root}) {\n  final violations = <String>[];\n  final workspaceRoot = root ?? repositoryRoot();\n\n  final rootPubspec =\n      File('${workspaceRoot.path}/pubspec.yaml').readAsStringSync();\n  final workspaceBlock = RegExp(r'^workspace:\\s*$', multiLine: true);\n  if (!workspaceBlock.hasMatch(rootPubspec)) {\n    violations.add('The repository root declares no `workspace:` block.');\n  }\n  for (final package in familyPackages) {\n    if (!rootPubspec.contains('packages/$package')) {\n      violations.add('The workspace does not list packages/$package.');\n    }\n  }\n\n  if (!File('${workspaceRoot.path}/pubspec.lock').existsSync()) {\n    violations.add('The workspace has no shared lockfile.');\n  }\n\n  for (final package in familyPackages) {\n    final dir = Directory('${workspaceRoot.path}/packages/$package');\n    if (File('${dir.path}/pubspec.lock').existsSync()) {\n      violations.add(\n        '$package carries its own lockfile — the workspace must share one.',\n      );\n    }\n    if (File('${dir.path}/.dart_tool/package_config.json').existsSync()) {\n      violations.add(\n        '$package carries its own package configuration — the workspace must share one.',\n      );\n    }\n  }\n\n  return violations;\n}\n"
+    }
+  ],
+  "receipt_version": 1,
+  "min_core_version": "6.0.0",
+  "generated_against_core": "7.2.0"
+}

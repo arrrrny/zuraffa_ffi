@@ -29,6 +29,12 @@ for pkg in "zuraffa_ffi" "zuraffa_ffi_platform" "zuraffa_ffi_android" "zuraffa_f
     sed -i '' -E "s/^version: .*/version: $VERSION/" "$pubspec"
     sed -i '' -E "/^( *zuraffa_ffi: \^)/s|.*|  zuraffa_ffi: ^$VERSION|" "$pubspec"
     sed -i '' -E "/^( *zuraffa_ffi_platform: \^)/s|.*|  zuraffa_ffi_platform: ^$VERSION|" "$pubspec"
+    # The repository is a pub workspace, so every member carries
+    # `resolution: workspace`. That field is only meaningful inside the
+    # repository — a published package must not carry it, or a consumer
+    # resolving it outside a workspace fails. `scripts/restore_dev_setup.sh`
+    # puts it back on the development branch.
+    sed -i '' -E "/^resolution: workspace$/d" "$pubspec"
     echo -e "${BLUE}$pkg -> $VERSION (in-family deps ^$VERSION)${NC}"
 done
 

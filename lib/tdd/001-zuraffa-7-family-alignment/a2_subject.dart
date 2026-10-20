@@ -8,6 +8,10 @@
 // pubspec's `workspace:` block, the shared lockfile, and the absence of a
 // per-member lockfile or package configuration.
 //
+// The [root] seam lets a test drive the scenario against a deliberately
+// broken workspace tree, so the failure paths are covered too and not only
+// the happy path.
+//
 // ignore_for_file: non_constant_identifier_names
 library;
 
@@ -18,11 +22,14 @@ import 'family_manifest.dart';
 /// Scenario runner for behavior A2.
 ///
 /// Returns the violations found; an empty list means the scenario holds.
-List<String> subject_a2() {
+///
+/// When [root] is given it replaces the repository root the scenario reads.
+List<String> subject_a2({Directory? root}) {
   final violations = <String>[];
-  final root = repositoryRoot();
+  final workspaceRoot = root ?? repositoryRoot();
 
-  final rootPubspec = File('${root.path}/pubspec.yaml').readAsStringSync();
+  final rootPubspec =
+      File('${workspaceRoot.path}/pubspec.yaml').readAsStringSync();
   final workspaceBlock = RegExp(r'^workspace:\s*$', multiLine: true);
   if (!workspaceBlock.hasMatch(rootPubspec)) {
     violations.add('The repository root declares no `workspace:` block.');
@@ -33,12 +40,12 @@ List<String> subject_a2() {
     }
   }
 
-  if (!File('${root.path}/pubspec.lock').existsSync()) {
+  if (!File('${workspaceRoot.path}/pubspec.lock').existsSync()) {
     violations.add('The workspace has no shared lockfile.');
   }
 
   for (final package in familyPackages) {
-    final dir = Directory('${root.path}/packages/$package');
+    final dir = Directory('${workspaceRoot.path}/packages/$package');
     if (File('${dir.path}/pubspec.lock').existsSync()) {
       violations.add(
         '$package carries its own lockfile — the workspace must share one.',

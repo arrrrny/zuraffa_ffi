@@ -336,3 +336,376 @@ Expected: not <Instance of 'UnimplementedError'>
 - prev-hash: d9a5ca57b7f57425a213403b9858da4f4d18b86b96ad52e1e78189b5d1ccc6c0
 - hash: f3364ecc29c3048977f3d2b7d6bf709baa20c704a6dceafdc89dcc25f9c15fd7
 
+## Cycle: A1 (green)
+
+- behavior: A1
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: bbeb83f9f0a427f8f587fb85c96d85a67e51cd1a62a32767879e0ae5d9dcd57c
+- criterion: AC-1
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart --plain-name "every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0."`
+- exit: 0
+- at: 2026-10-20T20:54:47.821666Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:08 +0: A1 (AC-1) A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.                                                                                
+00:08 +1: A1 (AC-1) A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.                                                                                
+00:09 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: f3364ecc29c3048977f3d2b7d6bf709baa20c704a6dceafdc89dcc25f9c15fd7
+- hash: 5a4747e458c2648c0083e368df598ea60dd3def467bd2398fae75d9b06eec198
+
+## Cycle: A1 (green)
+
+- behavior: A1
+- kind: green
+- subject-hash: bbeb83f9f0a427f8f587fb85c96d85a67e51cd1a62a32767879e0ae5d9dcd57c
+- criterion: AC-1
+- test: test/tdd/001-zuraffa-7-family-alignment/a1_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart --plain-name "every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0."`
+- exit: 0
+- at: 2026-10-20T20:55:19.765575Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a1_test.dart                                                                                            
+00:08 +0: A1 (AC-1) A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.                                                                                
+00:09 +0: A1 (AC-1) A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.                                                                                
+00:09 +1: A1 (AC-1) A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.                                                                                
+00:09 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 5a4747e458c2648c0083e368df598ea60dd3def467bd2398fae75d9b06eec198
+- hash: e3be601d6ab1192cbf5d3c4fc5b6953c6133174a43cc454186d349be77364e4a
+
+## Cycle: A2 (green)
+
+- behavior: A2
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: 4fd75d99c530bede79f74d93050f1e5338a23fb75a5718ae9e8e0d0ec294b8d9
+- criterion: AC-2
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart --plain-name "all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration."`
+- exit: 0
+- at: 2026-10-20T20:55:40.788272Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:07 +0: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:08 +0: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:08 +1: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:08 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 275e618ebe905e7af2d6290a9fbb74f90b3b9519430646bbceeb7bd50c58da0b
+- hash: c8bbd3c052c7be8899f8df79d1550d691e71270f22ec43a9b73906953ed6416e
+
+## Cycle: A2 (green)
+
+- behavior: A2
+- kind: green
+- subject-hash: 4fd75d99c530bede79f74d93050f1e5338a23fb75a5718ae9e8e0d0ec294b8d9
+- criterion: AC-2
+- test: test/tdd/001-zuraffa-7-family-alignment/a2_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart --plain-name "all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration."`
+- exit: 0
+- at: 2026-10-20T20:55:58.418657Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a2_test.dart                                                                                            
+00:06 +0: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:07 +0: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:07 +1: A2 (AC-2) A2 — all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration.                                                    
+00:07 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: c8bbd3c052c7be8899f8df79d1550d691e71270f22ec43a9b73906953ed6416e
+- hash: 1e0ab6fe06f199b17ad30640c069ed3c545a5adece47d9528dc1f379b9f1d820
+
+## Cycle: A3 (green)
+
+- behavior: A3
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: 4ac781b3e34769d10136d83c80f90a35aeced5da155e30b763bb24ed38e3d196
+- criterion: AC-3
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart --plain-name "the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point."`
+- exit: 0
+- at: 2026-10-20T20:57:46.929640Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:09 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:10 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:11 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:12 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:13 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:14 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:15 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:16 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:17 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:18 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:19 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:20 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:21 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:22 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:23 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:24 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:25 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:26 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:27 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:28 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:29 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:30 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:31 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:32 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:33 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:34 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:35 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:36 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:37 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:38 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:39 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:40 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:41 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:42 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:43 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:44 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:45 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:46 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:47 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:48 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:49 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:50 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:51 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:52 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:53 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:54 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:55 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:56 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:57 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:58 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:59 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:09 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:10 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:11 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:12 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:13 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:14 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:15 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:16 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:17 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:18 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:19 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:20 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:21 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:22 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:23 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:24 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:25 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:26 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:27 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:28 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:29 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:30 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:31 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:32 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:33 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:34 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:35 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:36 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:37 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:38 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+01:38 +0: A3 (AC-3) A3 — the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point.                                              
+01:38 +1: A3 (AC-3) A3 — the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point.                                              
+01:38 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 0930540fe97cfa8791e83f2ce8bd88bb09f7fcd4a84bc8f9406aff0e6e34040c
+- hash: 4cab7e90557d4176149efae37a47483eb82bf88059cd64579809eaf1d89ba479
+
+## Cycle: A3 (green)
+
+- behavior: A3
+- kind: green
+- subject-hash: 4ac781b3e34769d10136d83c80f90a35aeced5da155e30b763bb24ed38e3d196
+- criterion: AC-3
+- test: test/tdd/001-zuraffa-7-family-alignment/a3_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart --plain-name "the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point."`
+- exit: 0
+- at: 2026-10-20T20:58:13.079178Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:09 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:10 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:11 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:12 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:13 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:14 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:15 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:16 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a3_test.dart                                                                                            
+00:16 +0: A3 (AC-3) A3 — the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point.                                              
+00:16 +1: A3 (AC-3) A3 — the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point.                                              
+00:17 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 4cab7e90557d4176149efae37a47483eb82bf88059cd64579809eaf1d89ba479
+- hash: f51c9826fae2e6968be4ecfc0cbfc22494c4d4e8c7d205527d572b8c5799b73e
+
+## Cycle: A4 (green)
+
+- behavior: A4
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: 0268c10db22ebcd4be2e7a02c359ba77ff99b1b83987dd6348e22682a0a590b9
+- criterion: AC-4
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart --plain-name "the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own."`
+- exit: 0
+- at: 2026-10-20T20:58:42.395354Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:05 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:06 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:07 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:08 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:09 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:10 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:11 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:12 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:13 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:14 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:15 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:16 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:17 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:18 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:19 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:19 +0: A4 (AC-4) A4 — the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own.                                                      
+00:20 +1: A4 (AC-4) A4 — the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own.                                                      
+00:20 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: fb104b3cccc0b61aa2acba63a011263b549a5216d4531ec0eb1f5bfe04c5619c
+- hash: 7e0ce60b8008df2ec940d0e13cceb36250d73cca11a43f0b56aa330b26d70a4c
+
+## Cycle: A4 (green)
+
+- behavior: A4
+- kind: green
+- subject-hash: 0268c10db22ebcd4be2e7a02c359ba77ff99b1b83987dd6348e22682a0a590b9
+- criterion: AC-4
+- test: test/tdd/001-zuraffa-7-family-alignment/a4_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart --plain-name "the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own."`
+- exit: 0
+- at: 2026-10-20T20:58:55.551329Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:02 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:03 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:04 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/001-zuraffa-7-family-alignment/a4_test.dart                                                                                            
+00:04 +0: A4 (AC-4) A4 — the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own.                                                      
+00:04 +1: A4 (AC-4) A4 — the conversion goes through the shared `zuraffa_ffi_platform` envelope, and the adapter declares no envelope of its own.                                                      
+00:04 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 7e0ce60b8008df2ec940d0e13cceb36250d73cca11a43f0b56aa330b26d70a4c
+- hash: 3d19de19aa15922115ff2e742449125c12674500b2e2e1a46b75f3beba121e80
+

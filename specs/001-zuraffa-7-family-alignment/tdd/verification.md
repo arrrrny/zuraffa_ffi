@@ -4,12 +4,11 @@ Generated fresh by `zfa tdd verify --feature 001-zuraffa-7-family-alignment`.
 
 ## Gate
 
-- gate: `not_assessed`
-- not_assessed_reason: mutation config error: MutationConfigError: mutation_test exited with code -15 and produced no report. Stderr: 
+- gate: `pass`
 
 ## Mutation buckets (FR-014)
 
-- killed: 0
+- killed: 78
 - survived: 0
 - timed_out: 0
 
@@ -28,10 +27,10 @@ Generated fresh by `zfa tdd verify --feature 001-zuraffa-7-family-alignment`.
 - enabled-state: 0
 - sequence: 0
 
-- `A1` — not traced
-- `A2` — not traced
-- `A3` — not traced
-- `A4` — not traced
+- `A1` — not traced: no scenario-assertions header in test/tdd/001-zuraffa-7-family-alignment/a1_test.dart
+- `A2` — not traced: no scenario-assertions header in test/tdd/001-zuraffa-7-family-alignment/a2_test.dart
+- `A3` — not traced: no scenario-assertions header in test/tdd/001-zuraffa-7-family-alignment/a3_test.dart
+- `A4` — not traced: no scenario-assertions header in test/tdd/001-zuraffa-7-family-alignment/a4_test.dart
 
 ## Restoration (FR-021)
 
@@ -46,6 +45,9 @@ Generated fresh by `zfa tdd verify --feature 001-zuraffa-7-family-alignment`.
 ## Repro diagnostics (FR-020, non-sensitive)
 
 - runner_command: `dart run mutation_test`
+- exit_code: 0
+- elapsed_seconds: 1708
+- report_path: `/Users/arrrrny/Developer/zuraffa_ffi/.dart_tool/zfa/tdd-verify-report/mutation-test-report.md`
 - preflight_scope_ran (bug #924, per-behavior):
   - `test/tdd/001-zuraffa-7-family-alignment/a1_test.dart`
   - `test/tdd/001-zuraffa-7-family-alignment/a2_test.dart`
@@ -54,12 +56,13 @@ Generated fresh by `zfa tdd verify --feature 001-zuraffa-7-family-alignment`.
 
 ## Mutation run
 
-- mutation_was_run: false
+- mutation_was_run: true
+- mutation_score: 1.0000
 
 ## Evidence binding (bug #837)
 
 - spec_hash: c2a70ba1d6b45e2319b6279fef40af06c26c9dab678cda3fbfbd3c694b4f38d7
-- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a1_subject.dart` 00e547b26ad80369aca5b347e401f1fefb58398ad796098951b68aadc2ada3a1
-- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a2_subject.dart` c69d8979040ec2879ba568cb9761bf0c16979b89b922ecb59cc85cf1e22b3367
-- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a3_subject.dart` adf74ef77a5be5e153f1a30b2773b8b9610c9490eaf723d683cf893667d623d7
-- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a4_subject.dart` 662fecacfcd3aacd74052036fd5bf2922ee0fcd8353ddc3dc9efc5b20057a0ea
+- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a1_subject.dart` bbeb83f9f0a427f8f587fb85c96d85a67e51cd1a62a32767879e0ae5d9dcd57c
+- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a2_subject.dart` 4fd75d99c530bede79f74d93050f1e5338a23fb75a5718ae9e8e0d0ec294b8d9
+- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a3_subject.dart` 4ac781b3e34769d10136d83c80f90a35aeced5da155e30b763bb24ed38e3d196
+- subject_hash: `/Users/arrrrny/Developer/zuraffa_ffi/lib/tdd/001-zuraffa-7-family-alignment/a4_subject.dart` 0268c10db22ebcd4be2e7a02c359ba77ff99b1b83987dd6348e22682a0a590b9
