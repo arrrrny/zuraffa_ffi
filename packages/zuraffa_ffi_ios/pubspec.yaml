@@ -27,3 +27,5 @@ topics:
   - ios
   - clean-architecture
   - zuraffa
+
+resolution: workspace

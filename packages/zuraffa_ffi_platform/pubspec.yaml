@@ -25,3 +25,5 @@ topics:
   - ffi
   - clean-architecture
   - zuraffa
+
+resolution: workspace

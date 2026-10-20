@@ -27,3 +27,5 @@ topics:
   - android
   - clean-architecture
   - zuraffa
+
+resolution: workspace

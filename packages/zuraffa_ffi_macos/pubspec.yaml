@@ -27,3 +27,5 @@ topics:
   - macos
   - clean-architecture
   - zuraffa
+
+resolution: workspace
