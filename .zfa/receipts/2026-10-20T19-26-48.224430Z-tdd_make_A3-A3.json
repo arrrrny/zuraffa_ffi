@@ -1,0 +1,34 @@
+{
+  "schema": "proof.v1",
+  "command": "tdd make A3",
+  "target": "A3",
+  "repro": "zfa tdd make A3",
+  "at": "2026-10-20T19:26:48.224430Z",
+  "generator_version": "7.2.0",
+  "input": {
+    "sanctioned": true,
+    "hand_delta": true,
+    "transition": "skip",
+    "behavior": "A3",
+    "feature": "001-zuraffa-7-family-alignment"
+  },
+  "files": [
+    {
+      "path": "test/tdd/001-zuraffa-7-family-alignment/a3_test.dart",
+      "action": "update",
+      "sha256": "a566a70d2071482adcfca7d9f2627268a81e19ec6fe2d8f3491af61571e8a512",
+      "bytes": 1392,
+      "snapshot": "// GENERATED TEST — `zfa tdd gen A3` (spec 044-test-tdd-generation).\n//\n// behavior_id: A3\n// source_criterion: AC-3\n// kind: acceptance\n// description: the shared FFI contract (port, service, module, value, exception) and the DI registration are reachable from the package's public entry point.\n//\n// The red surface of the scenario: the paired subject at\n// `package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/a3_subject.dart`\n// reports the contract parts it could not reach.\n//\n// zfa:tdd: A3:hand — hand step completed before first red certification (issue #1411)\nlibrary;\n\nimport 'package:test/test.dart';\nimport 'package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/a3_subject.dart' as subject;\n\nvoid main() {\n  group('A3 (AC-3)', () {\n    test('A3 — the shared FFI contract — port, service, module, value, exception — and the DI registration are reachable from that entry point.', () {\n      final Object? result = (() {\n        try {\n          subject.subject_a3();\n          return null;\n        } on UnimplementedError catch (error) {\n          return error;\n        }\n      })();\n      expect(result, isNot(isA<UnimplementedError>()));\n      // The observable outcome of the scenario: every part of the shared\n      // contract is reachable through the package's public entry point.\n      expect(subject.subject_a3(), isEmpty);\n    });\n  });\n}\n"
+    },
+    {
+      "path": "lib/tdd/001-zuraffa-7-family-alignment/a3_subject.dart",
+      "action": "update",
+      "sha256": "adf74ef77a5be5e153f1a30b2773b8b9610c9490eaf723d683cf893667d623d7",
+      "bytes": 2878,
+      "snapshot": "// HAND-IMPLEMENTED SUBJECT — behavior A3 (zfa:tdd: A3:hand).\n//\n// behavior_id: A3\n// source_criterion: AC-3\n// description: the shared FFI contract (port, service, module, value, exception) and the DI registration are reachable from the package's public entry point.\n//\n// The scenario imports the family through its public entry point and uses\n// every part of the contract, so a symbol that stops being exported fails\n// the scenario at compile time or at runtime.\n//\n// ignore_for_file: non_constant_identifier_names\nlibrary;\n\nimport 'dart:typed_data';\n\nimport 'package:zuraffa/zuraffa.dart';\nimport 'package:zuraffa_ffi/zuraffa_ffi.dart';\n\n/// A minimal port: the scenario only proves the contract is reachable, not\n/// that a module compiles.\nclass _EchoPort implements FfiPort {\n  @override\n  Future<bool> isSupported() async => true;\n\n  @override\n  Future<FfiModule> compile({\n    required String id,\n    required Uint8List bytes,\n  }) async =>\n      FfiModule(id: id, byteLength: bytes.length);\n\n  @override\n  Future<List<FfiValue>> invoke({\n    required String id,\n    required String export,\n    List<FfiValue> args = const [],\n  }) async =>\n      const <FfiValue>[];\n\n  @override\n  Future<void> unload({required String id}) async {}\n}\n\n/// Scenario runner for behavior A3.\n///\n/// Returns the violations found; an empty list means the scenario holds.\nList<String> subject_a3() {\n  final violations = <String>[];\n\n  try {\n    final value = FfiValue.decode(1);\n    if (value is! FfiI32 || value.value != 1) {\n      violations.add('FfiValue.decode does not decode an int as FfiI32.');\n    }\n  } on Object catch (error) {\n    violations.add('FfiValue is not reachable: $error');\n  }\n\n  try {\n    final module = FfiModule(id: 'probe', byteLength: 7);\n    if (module.id != 'probe' || module.byteLength != 7) {\n      violations.add('FfiModule does not carry its id and byte length.');\n    }\n  } on Object catch (error) {\n    violations.add('FfiModule is not reachable: $error');\n  }\n\n  try {\n    final service = FfiService(port: _EchoPort());\n    if (!service.compiledModules.isEmpty) {\n      violations.add('A fresh FfiService already holds compiled modules.');\n    }\n  } on Object catch (error) {\n    violations.add('FfiService is not reachable: $error');\n  }\n\n  try {\n    const FfiException('probe', 'probe', recoverable: false);\n  } on Object catch (error) {\n    violations.add('FfiException is not reachable: $error');\n  }\n\n  try {\n    final getIt = GetIt.instance;\n    if (getIt.isRegistered<FfiService>()) {\n      getIt.unregister<FfiService>();\n    }\n    registerFfiDependencies(getIt, port: _EchoPort());\n    if (!getIt.isRegistered<FfiService>()) {\n      violations.add('registerFfiDependencies did not register the service.');\n    }\n  } on Object catch (error) {\n    violations.add('The DI registration is not reachable: $error');\n  }\n\n  return violations;\n}\n"
+    }
+  ],
+  "receipt_version": 1,
+  "min_core_version": "6.0.0",
+  "generated_against_core": "7.2.0"
+}

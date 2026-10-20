@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "feature": "001-zuraffa-7-family-alignment",
+  "lane": "engine",
+  "verdict": "red",
+  "result": "stopped",
+  "behaviors": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5",
+    "U6",
+    "contract:A1",
+    "contract:A2",
+    "contract:A3",
+    "contract:A4",
+    "contract:A5"
+  ],
+  "counts": {
+    "total": 15,
+    "pending": 14,
+    "red": 1,
+    "green": 0,
+    "done": 0
+  },
+  "stopped_at": "A1:make",
+  "at": "2026-10-20T18:56:54.581941Z"
+}

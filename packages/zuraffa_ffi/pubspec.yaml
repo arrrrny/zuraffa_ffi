@@ -2,14 +2,16 @@
 name: zuraffa_ffi
 description: >-
   Typed FFI support for the Zuraffa ecosystem: a pure-Dart port, module lifecycle, and typed failures behind an injected platform channel with federated adapters.
-version: 0.1.0
+version: 0.2.0
 homepage: https://zuraffa.com
 
 environment:
   sdk: ^3.11.0
 
+resolution: workspace
+
 dependencies:
-  zuraffa: ^6.2.2
+  zuraffa: ^7.2.0
 
 dev_dependencies:
   lints: ^4.0.0

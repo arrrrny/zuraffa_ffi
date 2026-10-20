@@ -1,0 +1,58 @@
+{
+  "schema": "proof.v1",
+  "command": "tdd plan",
+  "target": "001-zuraffa-7-family-alignment",
+  "repro": "zfa tdd plan",
+  "at": "2026-10-20T18:55:38.136676Z",
+  "generator_version": "7.2.0",
+  "input": {
+    "feature": "001-zuraffa-7-family-alignment"
+  },
+  "files": [
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/test-list.md",
+      "action": "update",
+      "sha256": "d30bb92b024d90fbce2f85b44c01b5159de5912f62219ec2ee38ce5ae954b600",
+      "bytes": 5353,
+      "snapshot": "# Test List: 001-zuraffa-7-family-alignment\n\n## Outer loop: acceptance behaviors\n\nOne per acceptance criterion in `spec.md`.\n\n| id | behavior | traces | state |\n| -- | -------- | ------ | ----- |\n| A1 | every family package declares the same `zuraffa` constraint, and that constraint admits the latest published `zuraffa` release. | AC-1 | PENDING |\n| A2 | all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration. | AC-2 | PENDING |\n| A3 | the shared FFI contract (port, service, module, value, exception) and the DI registration are reachable from the package's public entry point. | AC-3 | PENDING |\n| A4 | the conversion goes through the shared `zuraffa_ffi_platform` envelope instead of an adapter-local envelope implementation. | AC-4 | PENDING |\n\n## Outer loop: widget behaviors\n\nUI acceptance scenarios (bug #830): asserted through a testWidgets pair — a view-builder subject stub plus a widget test that pumps the view and asserts the scenario.\n\nThe `kind` cell is the finder-kind taxonomy (issue #1140): the scenario verbs' predicted assertion classes — presence, absence, route-outcome, enabled-state, sequence — or `none` when no finder is derivable. `zfa tdd gen` selects the assertion template by it and refuses a row whose kind column drifted from the scenario prose; verify-red's kind gate (issue #959/#964) certifies on the same vocabulary.\n\n| id | behavior | kind | traces | state |\n| -- | -------- | ---- | ------ | ----- |\n\n## Inner loop: unit behaviors\n\nOne per functional requirement in `spec.md`.\n\n| id | behavior | traces | state |\n| -- | -------- | ------ | ----- |\n| U1 | All five family packages MUST declare the same `zuraffa` dependency constraint. | FR-001, DependencyManifest.resolve | PENDING |\n| U2 | The family MUST resolve through a single pub workspace rooted at the repository root, so one `pub get` serves every member. | FR-002, DependencyManifest.resolve | PENDING |\n| U3 | The app-facing package MUST export the shared FFI contract and its DI registration from its public entry point. | FR-003, FfiContract.exports | PENDING |\n| U4 | Each adapter package MUST register its platform port on the DI container, leaving the service typed and unwired when no channel is injected. | FR-004, FfiRegistration.register | PENDING |\n| U5 | Adapter packages MUST NOT declare their own channel envelope; the shared envelope in `zuraffa_ffi_platform` MUST be the only implementation. | FR-005, PlatformFfiEnvelope.call | PENDING |\n| U6 | The publish pipeline MUST strip workspace-only pubspec fields from the published packages, so a published member never carries workspace resolution. | FR-006, PublishPipeline.prepare | PENDING |\n\n## Contract loop: contract behaviors\n\nOne per declared entity method, controller method and usecase in `spec.md` Layer Contracts (issue #1007). A contract test proves the implementation satisfies the DECLARED contract — a failing contract test is BLOCKED (never RED) and blocks the cycle from proceeding to GREEN.\n\n| id | behavior | traces | state |\n| -- | -------- | ------ | ----- |\n| contract:A1 | DependencyManifest.resolve() -> Map (interface method contract) | DependencyManifest.resolve | PENDING |\n| contract:A2 | FfiContract.exports() -> List<String> (interface method contract) | FfiContract.exports | PENDING |\n| contract:A3 | FfiRegistration.register(GetIt) -> void (interface method contract) | FfiRegistration.register | PENDING |\n| contract:A4 | PlatformFfiEnvelope.call(String, Map) -> Future<Map> (interface method contract) | PlatformFfiEnvelope.call | PENDING |\n| contract:A5 | PublishPipeline.prepare(String) -> void (interface method contract) | PublishPipeline.prepare | PENDING |\n\n## Layer contracts\n\n### Function\n\n- `DependencyManifest`: `resolve() -> Map`\n- `FfiContract`: `exports() -> List<String>`\n- `FfiRegistration`: `register(GetIt) -> void`\n- `PlatformFfiEnvelope`: `call(String, Map) -> Future<Map>`\n- `PublishPipeline`: `prepare(String) -> void`\n\n## Routing provenance\n\nPer-behavior routing decisions (issue #951): what each decision consulted — a declared marker/contract row, or the labeled legacy fallback to migrate.\n\nroute: A1 -> acceptance lane [declared: type marker, spec line 8]\nroute: A2 -> acceptance lane [declared: type marker, spec line 10]\nroute: A3 -> acceptance lane [declared: type marker, spec line 12]\nroute: A4 -> acceptance lane [declared: type marker, spec line 14]\nroute: U1 -> unit lane (func surface) [declared: contract row: DependencyManifest, spec line 34]\nroute: U2 -> unit lane (func surface) [declared: contract row: DependencyManifest, spec line 34]\nroute: U3 -> unit lane (func surface) [declared: contract row: FfiContract, spec line 35]\nroute: U4 -> unit lane (func surface) [declared: contract row: FfiRegistration, spec line 36]\nroute: U5 -> unit lane (func surface) [declared: contract row: PlatformFfiEnvelope, spec line 37]\nroute: U6 -> unit lane (func surface) [declared: contract row: PublishPipeline, spec line 38]\nroute: contract:A1 -> contract lane [declared: DependencyManifest]\nroute: contract:A2 -> contract lane [declared: FfiContract]\nroute: contract:A3 -> contract lane [declared: FfiRegistration]\nroute: contract:A4 -> contract lane [declared: PlatformFfiEnvelope]\nroute: contract:A5 -> contract lane [declared: PublishPipeline]\n\n"
+    },
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/traceability.md",
+      "action": "update",
+      "sha256": "ebcd80e730728f43800a41a1c2c2fdbb2ed752255666b5eb4fc99fc72f228d92",
+      "bytes": 2689,
+      "snapshot": "# Traceability: 001-zuraffa-7-family-alignment\n\nCoverage proof for `zfa tdd plan` (bug #846): every FR/AC requirement statement maps to a behavior row or an explicit manual declaration. Verify re-checks the hash — a spec edited after plan is drift (exit 3, re-plan required).\n\n<!-- tdd:traceability\nspec-hash: sha256:bba40ac33a876dc8e83699d77d3054a7882494331339d8e5ea9b4a6efda0bdde\nstatements: 10\nautomated: 10\nmanual: 0\nfr-manual: 0\nopen-gaps: 0\n-->\n\n| requirement | line | statement | behavior | status |\n| --- | --- | --- | --- | --- |\n| AC-1 | 7 | 1. **Given** a consumer that adds any package of the `zuraffa_ffi` family **When** it resolves the dependency graph **Then** every family package declares the same `zuraffa` constraint, and that constraint admits the latest published `zuraffa` release. | A1 | automated |\n| AC-2 | 9 | 2. **Given** a fresh clone of the repository **When** the developer runs a single dependency resolution at the repository root **Then** all five family packages resolve through one pub workspace, with one shared lockfile and one shared package configuration. | A2 | automated |\n| AC-3 | 11 | 3. **Given** a consumer of the app-facing `zuraffa_ffi` package **When** it imports the package **Then** the shared FFI contract (port, service, module, value, exception) and the DI registration are reachable from the package's public entry point. | A3 | automated |\n| AC-4 | 13 | 4. **Given** a platform adapter package **When** it converts a native channel call **Then** the conversion goes through the shared `zuraffa_ffi_platform` envelope instead of an adapter-local envelope implementation. | A4 | automated |\n| FR-001 | 18 | - **FR-001**: All five family packages MUST declare the same `zuraffa` dependency constraint. | U1 | automated |\n| FR-002 | 20 | - **FR-002**: The family MUST resolve through a single pub workspace rooted at the repository root, so one `pub get` serves every member. | U2 | automated |\n| FR-003 | 22 | - **FR-003**: The app-facing package MUST export the shared FFI contract and its DI registration from its public entry point. | U3 | automated |\n| FR-004 | 24 | - **FR-004**: Each adapter package MUST register its platform port on the DI container, leaving the service typed and unwired when no channel is injected. | U4 | automated |\n| FR-005 | 26 | - **FR-005**: Adapter packages MUST NOT declare their own channel envelope; the shared envelope in `zuraffa_ffi_platform` MUST be the only implementation. | U5 | automated |\n| FR-006 | 28 | - **FR-006**: The publish pipeline MUST strip workspace-only pubspec fields from the published packages, so a published member never carries workspace resolution. | U6 | automated |\n\n"
+    },
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/ui-ledger.md",
+      "action": "update",
+      "sha256": "314298c2022e5bf9f867847269c1eb76e3848ce20821f4a2bdddbe5899719c4c",
+      "bytes": 86,
+      "snapshot": "# UI Surface Ledger\n\n| surface | kind | proven by | state |\n| --- | --- | --- | --- |\n"
+    },
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/ui-ledger.json",
+      "action": "update",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "snapshot": "[]"
+    },
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/typed-ledger.md",
+      "action": "update",
+      "sha256": "fb96b76b92f2a624dbcfea7d9bedcd035a39ac75ca64b877923975172ff5b601",
+      "bytes": 125,
+      "snapshot": "# Typed Coverage Ledger\n\n| surface | kind | proven by | state | semantics | advisory |\n| --- | --- | --- | --- | --- | --- |\n"
+    },
+    {
+      "path": "specs/001-zuraffa-7-family-alignment/tdd/typed-ledger.json",
+      "action": "update",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "snapshot": "[]"
+    }
+  ],
+  "receipt_version": 1,
+  "min_core_version": "6.0.0",
+  "generated_against_core": "7.2.0"
+}
