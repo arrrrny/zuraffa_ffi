@@ -46,7 +46,7 @@ Generated fresh by `zfa tdd verify --feature 001-zuraffa-7-family-alignment`.
 
 - runner_command: `dart run mutation_test`
 - exit_code: 0
-- elapsed_seconds: 1384
+- elapsed_seconds: 324
 - report_path: `/Users/arrrrny/Developer/zuraffa_ffi/.dart_tool/zfa/tdd-verify-report/mutation-test-report.md`
 - preflight_scope_ran (bug #924, per-behavior):
   - `test/tdd/001-zuraffa-7-family-alignment/a1_test.dart`

@@ -191,3 +191,84 @@ For example, 'dart test --chain-stack-traces'.
 - prev-hash: f154bb4974f8b82639c37cfece2df51bdad48c34120c2d44d10ea664ee4c9820
 - hash: 0d153a8dbc5167ff83a82cbfad83eedefe06de0be2620316c466c35344870a67
 
+## Cycle: A1 (green)
+
+- behavior: A1
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: d19024f213580a72e351895751e4e804f7b5ed2fb972d0a7d1ba5909c6b751bb
+- criterion: AC-1
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart --plain-name "the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point."`
+- exit: 0
+- at: 2026-10-21T06:52:57.613434Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart                                                                                               
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart                                                                                               
+00:01 +0: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.                         
+00:01 +1: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.                         
+00:02 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 855db776f7598107e1bd606ab7780ff17de153544c3cc397c565c4732a8dac7f
+- hash: 9037ca80f9985fb020cb17b2c159e1953ccd0140fbb747425e18eb10b40a6837
+
+## Cycle: A1 (green)
+
+- behavior: A1
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: d19024f213580a72e351895751e4e804f7b5ed2fb972d0a7d1ba5909c6b751bb
+- criterion: AC-1
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart --plain-name "the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point."`
+- exit: 0
+- at: 2026-10-21T07:02:31.100033Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart                                                                                               
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart                                                                                               
+00:01 +0: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.                         
+00:01 +1: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.                         
+00:01 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 9037ca80f9985fb020cb17b2c159e1953ccd0140fbb747425e18eb10b40a6837
+- hash: edc93086edec9643af9390dc84ed3f5091089dfb0b49fef7e3155015455c4578
+
+## Cycle: A2 (green)
+
+- behavior: A2
+- kind: green
+- evidence: issue #1162 re-certification — the subject was hand-implemented after the certified red; this green evidence binds the NEW subject shape with the passing transcript
+- subject-hash: 43e919648eb9b0164de9e217096663b97e5f53f910c1484ffcf5e54e7fd3e1f6
+- criterion: AC-2
+- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a2_test.dart
+- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a2_test.dart --plain-name "the shared platform package and the three adapters come along with it, and no family member depends back on the app-facing package, so the graph stays acyclic."`
+- exit: 0
+- at: 2026-10-21T07:02:34.468629Z
+- output:
+```
+00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a2_test.dart                                                                                               
+00:01 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a2_test.dart                                                                                               
+00:01 +0: A2 (AC-2) A2 — the shared platform package and the three adapters come along with it, and no family member depends back on the app-facing package, so the graph stays acyclic.               
+00:01 +1: A2 (AC-2) A2 — the shared platform package and the three adapters come along with it, and no family member depends back on the app-facing package, so the graph stays acyclic.               
+00:01 +1: All tests passed!
+```
+- generation:
+  (none)
+- suite: baseline=0 guard=0 new=(none)
+
+- schema: 1
+- prev-hash: 0d153a8dbc5167ff83a82cbfad83eedefe06de0be2620316c466c35344870a67
+- hash: 520a75877e110fe57281008f592ef88505c5fdfb60f3651d03d3569dd6c223b5
+

@@ -55,26 +55,24 @@ void main() {
         'zuraffa_ffi_android',
       };
       final violations = subject.subject_a2(graph: graph);
-      expect(violations, hasLength(2));
-      expect(
-        violations.join(' '),
-        contains('does not depend on zuraffa_ffi_ios'),
-      );
-      expect(
-        violations.join(' '),
-        contains('does not depend on zuraffa_ffi_macos'),
-      );
+      expect(violations, <String>[
+        'The app-facing package does not depend on zuraffa_ffi_ios — '
+            'a consumer of `zuraffa_ffi` alone would not get it.',
+        'The app-facing package does not depend on zuraffa_ffi_macos — '
+            'a consumer of `zuraffa_ffi` alone would not get it.',
+      ]);
     });
 
     test('A2 — a member that depends back on the app-facing package is reported', () {
       final graph = _healthyGraph();
       graph['zuraffa_ffi_platform'] = <String>{'zuraffa_ffi'};
       final violations = subject.subject_a2(graph: graph);
-      expect(
-        violations.join(' '),
-        contains('depends back on the app-facing package'),
-      );
-      expect(violations.join(' '), contains('cyclic'));
+      expect(violations, <String>[
+        'zuraffa_ffi_platform depends back on the app-facing package — '
+            'the graph would be cyclic.',
+        'The family dependency graph is cyclic: '
+            'zuraffa_ffi -> zuraffa_ffi_platform -> zuraffa_ffi.',
+      ]);
     });
 
     test('A2 — a cyclic graph is reported', () {
@@ -82,7 +80,11 @@ void main() {
       graph['zuraffa_ffi_platform'] = <String>{'zuraffa_ffi_android'};
       graph['zuraffa_ffi_android'] = <String>{'zuraffa_ffi_platform'};
       final violations = subject.subject_a2(graph: graph);
-      expect(violations.join(' '), contains('cyclic'));
+      expect(violations, <String>[
+        'The family dependency graph is cyclic: '
+            'zuraffa_ffi_platform -> zuraffa_ffi_android -> '
+            'zuraffa_ffi_platform.',
+      ]);
     });
   });
 }

@@ -44,8 +44,11 @@ void main() {
         ),
       );
       expect(violations, hasLength(1));
-      expect(violations.single, contains('FfiValue is not reachable'));
-      expect(violations.single, contains('does not export it'));
+      expect(
+        violations.single,
+        'FfiValue is not reachable from the app-facing entry point: '
+        'the entry point does not export it.',
+      );
     });
 
     test('A1 — a part whose use fails is reported', () {
@@ -61,9 +64,9 @@ void main() {
       expect(violations, hasLength(1));
       expect(
         violations.single,
-        contains('registerMacosFfiDependencies is not reachable'),
+        'registerMacosFfiDependencies is not reachable from the app-facing '
+        'entry point: Bad state: macos registration failed',
       );
-      expect(violations.single, contains('macos registration failed'));
     });
 
     test('A1 — every part the behavior names is observed by the scenario', () {

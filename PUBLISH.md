@@ -5,13 +5,13 @@
 ## Package Manager
 
 - **Type**: `pub.dev`
-- **Packages** (in publish order — the app package first; the platform core
-  and the federated adapters declare their in-family dependencies hosted):
-1. `zuraffa_ffi`
-2. `zuraffa_ffi_platform`
-3. `zuraffa_ffi_android`
-4. `zuraffa_ffi_ios`
-5. `zuraffa_ffi_macos`
+- **Packages** (in publish order — the shared core first; the adapters and
+  the app-facing umbrella declare their in-family dependencies hosted):
+1. `zuraffa_ffi_platform`
+2. `zuraffa_ffi_android`
+3. `zuraffa_ffi_ios`
+4. `zuraffa_ffi_macos`
+5. `zuraffa_ffi`
 - **All packages are public**
 
 ## Scripts
