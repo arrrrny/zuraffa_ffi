@@ -4,7 +4,7 @@ set -e
 # dependency order (the shared core first: the adapters and the app-facing
 # umbrella declare it as a hosted dependency). Needs flutter/dart on PATH.
 
-GREEN='\033[0;32m'; BLUE='\033[0;34m'; RED='\033[0;31m'; NC='\033[0m'
+GREEN='\033[0;32m'; BLUE='\033[0;34m'; YELLOW='\033[1;33m'; RED='\033[0;31m'; NC='\033[0m'
 
 PACKAGES_IN_ORDER=("zuraffa_ffi_platform" "zuraffa_ffi_android" "zuraffa_ffi_ios" "zuraffa_ffi_macos" "zuraffa_ffi")
 ROOT_DIR="$(cd "$(dirname "$0")/.." >/dev/null 2>&1; pwd -P)"
@@ -18,8 +18,31 @@ for pkg in "${PACKAGES_IN_ORDER[@]}"; do
     fi
 
     cd "$ROOT_DIR/packages/$pkg"
-    dart pub publish --dry-run || { echo -e "${RED}Dry-run failed for $pkg${NC}"; exit 1; }
-    dart pub publish --force || { echo -e "${RED}Publish failed for $pkg${NC}"; exit 1; }
+
+    # pub.dev serves a freshly published version to the *solver* a few
+    # minutes after the API starts listing it, so a dependent's dry-run can
+    # fail to resolve the in-family dependency even though the version is
+    # already up. Retry until the solver catches up.
+    dry_run_ok=0
+    for i in $(seq 1 40); do
+        if dart pub publish --dry-run; then dry_run_ok=1; break; fi
+        echo -e "${YELLOW}Dry-run for $pkg cannot resolve yet - waiting for pub.dev propagation.${NC}"
+        sleep 30
+    done
+    [ "$dry_run_ok" = 1 ] || { echo -e "${RED}Dry-run failed for $pkg${NC}"; exit 1; }
+
+    # The version may already be on pub.dev while its API listing still lags
+    # behind — the server then refuses the upload with "already exists".
+    # That is a success, not a failure.
+    publish_out=$(dart pub publish --force 2>&1) || {
+        if echo "$publish_out" | grep -q "already exists"; then
+            echo -e "${YELLOW}$pkg $version is already on pub.dev.${NC}"
+        else
+            echo "$publish_out"
+            echo -e "${RED}Publish failed for $pkg${NC}"
+            exit 1
+        fi
+    }
 
     # Wait for propagation before the dependents publish.
     for i in $(seq 1 30); do
