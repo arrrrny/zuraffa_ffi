@@ -25,3 +25,5 @@ topics:
   - clean-architecture
   - zuraffa
 
+
+resolution: workspace
