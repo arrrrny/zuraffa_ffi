@@ -3,7 +3,7 @@ description: >-
   Monorepo workspace for the zuraffa_ffi federated plugin family (app-facing
   package, platform envelope core, and the android/ios/macos adapters).
 publish_to: none
-version: 0.2.0
+version: 0.2.1
 
 environment:
   sdk: ^3.11.0
