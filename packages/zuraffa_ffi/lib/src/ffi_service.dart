@@ -1,11 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:zuraffa/zuraffa.dart';
-
-import 'ffi_exception.dart';
-import 'ffi_module.dart';
-import 'ffi_port.dart';
-import 'ffi_value.dart';
+import 'package:zuraffa_ffi_platform/zuraffa_ffi_platform.dart';
 
 /// Facade over the [FfiPort]: owns the compiled-module registry
 /// and turns lifecycle mistakes (double compile, call-before-compile)

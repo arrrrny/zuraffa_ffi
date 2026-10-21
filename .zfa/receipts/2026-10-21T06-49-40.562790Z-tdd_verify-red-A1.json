@@ -1,0 +1,23 @@
+{
+  "schema": "proof.v1",
+  "command": "tdd verify-red",
+  "target": "A1",
+  "repro": "zfa tdd verify-red",
+  "at": "2026-10-21T06:49:40.562790Z",
+  "generator_version": "7.2.0",
+  "input": {
+    "feature": "002-one-dependency-umbrella"
+  },
+  "files": [
+    {
+      "path": "specs/002-one-dependency-umbrella/tdd/cycle-log.md",
+      "action": "update",
+      "sha256": "4ab6f51fbeaf9073c3136784ab73c6c5b1365d4d27803576697892ac168a6603",
+      "bytes": 2464,
+      "snapshot": "# Cycle Log\n\nAppend only. Newest last. Every entry's `red` block is the evidence that the test existed and failed before the implementation.\n\n## Cycle: A1 (red)\n\n- behavior: A1\n- kind: red\n- classification: assertionFailure\n- subject-hash: a4ca32dd9fb5cfe9554201b8459052a7d431f4d04cd5d82544f226db2e7883f3\n- criterion: AC-1\n- test: /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart\n- command: `dart test --concurrency=2 /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart --plain-name \"the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.\"`\n- exit: 1\n- at: 2026-10-21T06:49:40.560743Z\n- output:\n```\n00:00 +0: loading /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart                                                                                               \n00:00 +0: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.                         \n00:00 +0 -1: A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point. [E]                  \n  Expected: not <Instance of 'UnimplementedError'>\n    Actual: UnimplementedError:<UnimplementedError: subject_a1 not implemented>\n  \n  package:matcher                                         expect\n  test/tdd/002-one-dependency-umbrella/a1_test.dart 32:7  main.<fn>.<fn>\n  \n\nTo run this test again: /usr/local/share/flutter/bin/cache/dart-sdk/bin/dart test /Users/arrrrny/Developer/zuraffa_ffi/test/tdd/002-one-dependency-umbrella/a1_test.dart -p vm --plain-name 'A1 (AC-1) A1 — the shared FFI contract and all three platform adapters — the Android, iOS, and macOS registration helpers — are reachable from that one entry point.'\n\n00:00 +0 -1: Some tests failed.                                                                                                                                                                        \n\nConsider enabling the flag chain-stack-traces to receive more detailed exceptions.\nFor example, 'dart test --chain-stack-traces'.\n```\n\n- schema: 1\n- prev-hash: genesis\n- hash: b6aef9f94410640c477ed460034a9dc6aade860c6c6bfc789e505bcccc4d10b4\n\n"
+    }
+  ],
+  "receipt_version": 1,
+  "min_core_version": "6.0.0",
+  "generated_against_core": "7.2.0"
+}

@@ -1,0 +1,25 @@
+{
+  "feature": "002-one-dependency-umbrella",
+  "split_at": "2026-10-21T00:33:18.001345Z",
+  "source": "tdd/test-list.md",
+  "rows": 2,
+  "spec_hash": "6a634b58334f208584e59eb639e80af23d3df74ef7d1679a2a0a16e4f738a5ac",
+  "spec_mtime": "2026-10-21T00:33:01.274463Z",
+  "classification": {
+    "A1": "CORE",
+    "A2": "CORE"
+  },
+  "classification_source": {
+    "A1": "heuristic",
+    "A2": "heuristic"
+  },
+  "adaptive_slots": [],
+  "golden_ids": [],
+  "files": [
+    "tdd/04-ENGINE.md",
+    "tdd/04-SKIN.md",
+    "tdd/04-CONTRACT.md",
+    "tdd/test-list.md (meta-index)"
+  ],
+  "engine_flutter_references": 0
+}

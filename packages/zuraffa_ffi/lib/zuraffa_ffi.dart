@@ -4,10 +4,24 @@
 /// typed failures, and DI registration. Platform adapters implement the
 /// port over an injected platform channel — the shared envelope machinery
 /// lives in `zuraffa_ffi_platform`.
+///
+/// The port contract and the three platform adapters are reachable from
+/// this one entry point, so depending on `zuraffa_ffi` alone is enough:
+/// the adapters are re-exported here instead of being separate
+/// dependencies the consumer has to add by hand.
 library;
 
-export 'src/ffi_exception.dart';
-export 'src/ffi_module.dart';
-export 'src/ffi_port.dart';
 export 'src/ffi_service.dart';
-export 'src/ffi_value.dart';
+export 'package:zuraffa_ffi_android/zuraffa_ffi_android.dart';
+export 'package:zuraffa_ffi_ios/zuraffa_ffi_ios.dart';
+export 'package:zuraffa_ffi_macos/zuraffa_ffi_macos.dart';
+export 'package:zuraffa_ffi_platform/zuraffa_ffi_platform.dart'
+    show
+        FfiException,
+        FfiF32,
+        FfiF64,
+        FfiI32,
+        FfiI64,
+        FfiModule,
+        FfiPort,
+        FfiValue;

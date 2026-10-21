@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:zuraffa_ffi/zuraffa_ffi.dart';
+import 'package:zuraffa_ffi_platform/zuraffa_ffi_platform.dart';
 
 import 'ios_ffi_channel.dart';
 import 'ios_ffi_exception.dart';

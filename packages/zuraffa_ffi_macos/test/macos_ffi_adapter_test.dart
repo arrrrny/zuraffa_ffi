@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:test/test.dart';
 import 'package:zuraffa/zuraffa.dart';
-import 'package:zuraffa_ffi/zuraffa_ffi.dart';
+import 'package:zuraffa_ffi_platform/zuraffa_ffi_platform.dart';
 import 'package:zuraffa_ffi_macos/zuraffa_ffi_macos.dart';
 
 void main() {

@@ -29,6 +29,9 @@ for pkg in "zuraffa_ffi" "zuraffa_ffi_platform" "zuraffa_ffi_android" "zuraffa_f
     sed -i '' -E "s/^version: .*/version: $VERSION/" "$pubspec"
     sed -i '' -E "/^( *zuraffa_ffi: \^)/s|.*|  zuraffa_ffi: ^$VERSION|" "$pubspec"
     sed -i '' -E "/^( *zuraffa_ffi_platform: \^)/s|.*|  zuraffa_ffi_platform: ^$VERSION|" "$pubspec"
+    sed -i '' -E "/^( *zuraffa_ffi_android: \^)/s|.*|  zuraffa_ffi_android: ^$VERSION|" "$pubspec"
+    sed -i '' -E "/^( *zuraffa_ffi_ios: \^)/s|.*|  zuraffa_ffi_ios: ^$VERSION|" "$pubspec"
+    sed -i '' -E "/^( *zuraffa_ffi_macos: \^)/s|.*|  zuraffa_ffi_macos: ^$VERSION|" "$pubspec"
     # The repository is a pub workspace, so every member carries
     # `resolution: workspace`. That field is only meaningful inside the
     # repository — a published package must not carry it, or a consumer

@@ -1,5 +1,5 @@
 import 'package:zuraffa/zuraffa.dart';
-import 'package:zuraffa_ffi/zuraffa_ffi.dart';
+import 'package:zuraffa_ffi_platform/zuraffa_ffi_platform.dart';
 
 import 'macos_ffi_channel.dart';
 import 'macos_ffi_exception.dart';
