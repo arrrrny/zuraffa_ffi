@@ -2,7 +2,7 @@
 name: zuraffa_ffi_ios
 description: >-
   Typed FFI support for the Zuraffa ecosystem: a pure-Dart port, module lifecycle, and typed failures behind an injected platform channel with federated adapters.
-version: 0.2.1
+version: 7.2.0
 homepage: https://zuraffa.com
 
 environment:
@@ -29,3 +29,8 @@ topics:
 
 
 resolution: workspace
+
+# Fleet-wide xml policy: pin the override to the latest xml so graphs that
+# still transitively pull the abandoned minio (xml 6.x) resolve cleanly.
+dependency_overrides:
+  xml: 7.1.0
