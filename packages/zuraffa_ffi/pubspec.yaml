@@ -14,10 +14,10 @@ dependencies:
   # The port contract and the three platform adapters are reachable
   # through this one dependency: a consumer adds `zuraffa_ffi` and gets
   # every platform implementation, with no second dependency to add.
-  zuraffa_ffi_platform: ^0.2.1
-  zuraffa_ffi_android: ^0.2.1
-  zuraffa_ffi_ios: ^0.2.1
-  zuraffa_ffi_macos: ^0.2.1
+  zuraffa_ffi_platform: ^7.2.0
+  zuraffa_ffi_android: ^7.2.0
+  zuraffa_ffi_ios: ^7.2.0
+  zuraffa_ffi_macos: ^7.2.0
 
 dev_dependencies:
   lints: ^4.0.0

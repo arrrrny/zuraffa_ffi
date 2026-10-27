@@ -29,8 +29,8 @@ dependencies:
   # scenarios can assert the family's public contract at runtime instead of
   # reading its source text.
   zuraffa: ^7.2.0
-  zuraffa_ffi: ^0.2.1
-  zuraffa_ffi_platform: ^0.2.1
+  zuraffa_ffi: ^7.2.0
+  zuraffa_ffi_platform: ^7.2.0
 
 # Fleet-wide xml policy: pin the override to the latest xml so graphs that
 # still transitively pull the abandoned minio (xml 6.x) resolve cleanly.

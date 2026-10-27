@@ -11,7 +11,7 @@ environment:
 
 dependencies:
   zuraffa: ^7.2.0
-  zuraffa_ffi_platform: ^0.2.1
+  zuraffa_ffi_platform: ^7.2.0
 
 dev_dependencies:
   lints: ^4.0.0
