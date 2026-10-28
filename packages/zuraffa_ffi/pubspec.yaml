@@ -2,7 +2,7 @@
 name: zuraffa_ffi
 description: >-
   Typed FFI support for the Zuraffa ecosystem: a pure-Dart port, module lifecycle, and typed failures behind an injected platform channel with federated adapters.
-version: 7.2.0
+version: 7.3.0
 homepage: https://zuraffa.com
 
 environment:
@@ -10,14 +10,14 @@ environment:
 
 
 dependencies:
-  zuraffa: ^7.2.0
+  zuraffa: ^7.3.0
   # The port contract and the three platform adapters are reachable
   # through this one dependency: a consumer adds `zuraffa_ffi` and gets
   # every platform implementation, with no second dependency to add.
-  zuraffa_ffi_platform: ^7.2.0
-  zuraffa_ffi_android: ^7.2.0
-  zuraffa_ffi_ios: ^7.2.0
-  zuraffa_ffi_macos: ^7.2.0
+  zuraffa_ffi_platform: ^7.3.0
+  zuraffa_ffi_android: ^7.3.0
+  zuraffa_ffi_ios: ^7.3.0
+  zuraffa_ffi_macos: ^7.3.0
 
 dev_dependencies:
   lints: ^4.0.0
@@ -38,3 +38,6 @@ resolution: workspace
 # still transitively pull the abandoned minio (xml 6.x) resolve cleanly.
 dependency_overrides:
   xml: 7.1.0
+
+  zuraffa:
+    path: ../../../zuraffa
