@@ -53,6 +53,21 @@ String declaredConstraint(String packageName, String dependency) {
   return match.group(1)!;
 }
 
+/// The version a family member ships at. Under the mono-version policy the
+/// whole family (and the core it targets) shares one version, so any
+/// member's own version is the `zuraffa` release the family's constraint
+/// must admit.
+String declaredVersion(String packageName) {
+  final match = RegExp(
+    '^version:\\s*(\\S+)',
+    multiLine: true,
+  ).firstMatch(memberPubspec(packageName));
+  if (match == null) {
+    throw StateError('$packageName declares no version.');
+  }
+  return match.group(1)!;
+}
+
 /// Whether a caret constraint (e.g. `^7.2.0`) admits [version].
 bool constraintAdmits(String constraint, String version) {
   if (!constraint.startsWith('^')) {

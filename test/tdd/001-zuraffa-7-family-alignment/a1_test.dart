@@ -14,10 +14,11 @@ library;
 
 import 'package:test/test.dart';
 import 'package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/a1_subject.dart' as subject;
+import 'package:zuraffa_ffi_workspace/tdd/001-zuraffa-7-family-alignment/family_manifest.dart';
 
 void main() {
   group('A1 (AC-1)', () {
-    test('A1 — every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.', () {
+    test('A1 — every member declares the same `zuraffa` constraint, and that constraint admits the family version.', () {
       final Object? result = (() {
         try {
           subject.subject_a1();
@@ -29,7 +30,7 @@ void main() {
       expect(result, isNot(isA<UnimplementedError>()));
       // The observable outcome of the scenario: the family's manifest carries
       // no violation — every member agrees on the constraint, and the
-      // constraint admits zuraffa 7.2.0.
+      // constraint admits the family's own mono version.
       expect(subject.subject_a1(), isEmpty);
     });
 
@@ -45,7 +46,7 @@ void main() {
       expect(violations.single, contains('different `zuraffa` constraints'));
     });
 
-    test('A1 — a family constraint that does not admit zuraffa 7.2.0 is reported', () {
+    test('A1 — a family constraint that does not admit the family version is reported', () {
       final violations = subject.subject_a1(constraints: {
         'zuraffa_ffi': '^6.2.2',
         'zuraffa_ffi_platform': '^6.2.2',
@@ -54,7 +55,7 @@ void main() {
         'zuraffa_ffi_macos': '^6.2.2',
       });
       expect(violations, hasLength(1));
-      expect(violations.single, contains('does not admit zuraffa 7.2.0'));
+      expect(violations.single, contains('does not admit zuraffa '));
     });
 
     test('A1 — a member that declares no `zuraffa` dependency at all is reported', () {

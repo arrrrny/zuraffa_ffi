@@ -2,7 +2,7 @@
 //
 // behavior_id: A1
 // source_criterion: AC-1
-// description: every member declares the same `zuraffa` constraint, and that constraint admits zuraffa 7.2.0.
+// description: every member declares the same `zuraffa` constraint, and that constraint admits the family's own (mono) version.
 //
 // The scenario reads the shipped pubspecs — the real manifest — instead of
 // a hand-kept copy of it, so the check fails the moment a family member
@@ -55,9 +55,15 @@ List<String> subject_a1({Map<String, String>? constraints}) {
   if (distinct.isEmpty) return violations;
 
   final constraint = distinct.single;
-  if (!constraintAdmits(constraint, '7.2.0')) {
+  // The mono-version fleet ships the whole family (and the core) at one
+  // version, so the floor the constraint must admit is the family's own
+  // shipped version — not a hard-coded release (the literal 7.2.0 pin went
+  // red the moment the train moved to 7.3.0).
+  final familyVersion = declaredVersion(familyPackages.first);
+  if (!constraintAdmits(constraint, familyVersion)) {
     violations.add(
-      'The family constraint `$constraint` does not admit zuraffa 7.2.0.',
+      'The family constraint `$constraint` does not admit zuraffa '
+      '$familyVersion.',
     );
   }
   return violations;

@@ -32,8 +32,3 @@ resolution: workspace
 
 # Fleet-wide xml policy: pin the override to the latest xml so graphs that
 # still transitively pull the abandoned minio (xml 6.x) resolve cleanly.
-dependency_overrides:
-  xml: 7.1.0
-
-  zuraffa:
-    path: ../../../zuraffa
