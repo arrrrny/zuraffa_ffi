@@ -12,7 +12,7 @@ package and on the three platform adapters, and re-exports them:
 
 ```yaml
 dependencies:
-  zuraffa_ffi: ^0.2.1
+  zuraffa_ffi: ^7.3.2
 ```
 
 ```dart
