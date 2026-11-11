@@ -32,9 +32,3 @@ resolution: workspace
 
 # Fleet-wide xml policy: pin the override to the latest xml so graphs that
 # still transitively pull the abandoned minio (xml 6.x) resolve cleanly.
-
-# Fleet dev policy: xml pinned to the latest release; sibling fleet
-# checkouts resolve not-yet-published constraints locally.
-# dependency_overrides are stripped on publish.
-dependency_overrides:
-  xml: 7.1.0
